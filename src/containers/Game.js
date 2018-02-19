@@ -52,20 +52,15 @@ class Game extends PureComponent {
     if (!game) return null
 
     const title = game.players.map(p => (p.name || null))
-      .filter(n => !!n)
-      .join(' vs ')
+    .filter(n => !!n)
+    .join(' vs ')
 
     return (
       <div className="Game">
-        <h1>Game!</h1>
-        <p>{title}</p>
+      <h1>Game!</h1>
+      <p>{title}</p>
 
-        <h1>YOUR GAME HERE! :)</h1>
-
-        <h2>Debug Props</h2>
-        <pre>{JSON.stringify(this.props, true, 2)}</pre>
-
-        <JoinGameDialog gameId={game._id} />
+      <JoinGameDialog gameId={game._id} />
       </div>
     )
   }
